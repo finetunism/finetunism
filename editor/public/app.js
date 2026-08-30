@@ -302,6 +302,12 @@ $("btn-build").onclick = async () => {
 };
 
 $("btn-publish").onclick = async () => {
+  if (state.slug && $("m-draft").checked) {
+    if (confirm(`"${$("m-title").value || state.slug}" is marked as a draft, so it would NOT go live.\n\nUn-draft it and publish it now?`)) {
+      $("m-draft").checked = false;
+      markDirty();
+    }
+  }
   await save();
   const message = prompt("commit message", "publish");
   if (message === null) return;
@@ -310,7 +316,8 @@ $("btn-publish").onclick = async () => {
   try {
     const r = await api("POST", "/api/publish", { message });
     status("ready");
-    toast(`published ${r.built.length} post(s) — cloudflare will deploy in ~1 min`);
+    if (r.built.length) toast(`published ${r.built.length} post(s): ${r.built.join(", ")} — cloudflare will deploy in ~1 min`);
+    else toast("pushed, but no posts are live: every post is still a draft", true);
     gitStatus();
   } catch (e) {
     status("ready");
