@@ -29,7 +29,7 @@ its safe to say I knew then and there it wasn't going to be as easy as I expecte
 
 by desaturating it to make it b&w, and using the "burn" filter, which I guess increases contrast, I managed to produce this afterwards:
 ![2 bathroomdoorcontrasttest2](2_bathroomdoorcontrasttest2.jpg)
-it was still pretty bad, but there was a glimmer of hope in my mind that maybe I could make this work.
+it was still pretty bad, but there was a glimmer of hope that maybe I could make this work.
 
 ## babysteps
 after a short window of thinking about what is it that I was doing, I came to the conclusion that for this to be reproducible, I had to come up with a way to replicate what [magic bytes](https://en.wikipedia.org/wiki/List_of_file_signatures) do on a file format. 
