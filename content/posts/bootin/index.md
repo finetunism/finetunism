@@ -1,7 +1,7 @@
 ---
 title: bootin'
 date: 2026-08-30
-draft: true
+draft: false
 description: presenting my blog and what to expect here
 tags: presentation
 ---
