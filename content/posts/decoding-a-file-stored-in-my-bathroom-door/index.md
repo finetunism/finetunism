@@ -31,7 +31,9 @@ by desaturating it to make it b&w, and using the "burn" filter, which I guess in
 it was still pretty bad, but there was a glimmer of hope in my mind that maybe I could make this work.
 
 ## babysteps
+after a short window of thinking about what is it that I was doing, I came to the conclusion that for this to be reproducible, I had to come up with a way to replicate what [magic bytes](https://en.wikipedia.org/wiki/List_of_file_signatures) do on a file format. 
 
+that is, implementing a mechanism, in the context of my bathroom door, that would allow a piece of code to understand where should it start reading data from, and for this, I would have to spend some time at my bathroom staring at the door, trying to see if I could spot some segment of it which would be easily identifiable by a piece of code sort of reliably.
 
 ### thoughts and info:
 
