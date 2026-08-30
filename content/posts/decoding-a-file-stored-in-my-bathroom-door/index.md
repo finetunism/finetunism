@@ -15,7 +15,7 @@ this is an idea I've been thinking about for a while, and has been resonating wi
 
 the whole endeavour boils down to the fact that you can decode whatever you desire to produce your desired output, provided you have the right algorithm or mechanism to achieve that. metaphorically, and in a funny way, it's like the saying "make whatever you think of it". it's an analogue of overthinking a situation and convincing yourself (through your neuron algorithm) that the idea you made up in your mind about it is exactly what the situation actually is. 
 
-I do think there might be something useful here, on the contrary to this more human example, given the mechanism that we build to decode this is transferable and has a sort of anchor in physical reality, as well as a source of semi-consistency. I say semi because as we will see or can probably deduce, it all depends on the way we capture our source, and the reliability of our consistency when capturing it (OR how we can correct for a relative lack of it, if our tools allow it).
+I do think there might be something useful here, on the contrary to this more human example, given the mechanism that we build to decode this is transferable and has a sort of anchor in physical reality, as well as a source of semi-consistency. I say semi because as we will see or can probably deduce, it all depends on the way we capture our source, and the reliability of our consistency when capturing it (OR how we can correct for a relative lack of it, if our tools allow for it).
 
 ## laying the foundational logs
 ![bathroomdoorcrop](bathroomdoorcrop-4.jpg)
