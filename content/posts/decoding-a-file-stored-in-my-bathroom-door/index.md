@@ -28,9 +28,9 @@ its safe to say given the amount of time it took just to do this, I knew it wasn
 
 
 
-by desaturating it to make it b&w, and using the "burn" filter, which I guess increases contrast, I managed to get this afterwards:
+by desaturating it to make it b&w, and using the "burn" filter, which I guess increases contrast, I managed to produce this afterwards:
 ![2 bathroomdoorcontrasttest2](2_bathroomdoorcontrasttest2.jpg)
-I was still pretty bad, but there was a glimmer of hope in my mind that maybe I could make this work.
+it was still pretty bad, but there was a glimmer of hope in my mind that maybe I could make this work.
 
 
 **thoughts and info:**
