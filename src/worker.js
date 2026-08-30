@@ -19,7 +19,7 @@ function pickLang(header) {
 class Translate {
   element(el) {
     const text = el.getAttribute("data-es");
-    if (text !== null) el.setInnerContent(text);
+    if (text !== null) el.setInnerContent(text, { html: true });
   }
 }
 

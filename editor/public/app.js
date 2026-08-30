@@ -87,10 +87,11 @@ function fillForm() {
   $("m-date").value = en.meta.date ?? "";
   $("m-tags").value = en.meta.tags ?? "";
   $("m-draft").checked = String(en.meta.draft ?? "").toLowerCase() === "true";
+  $("m-project").checked = String(en.meta.project ?? "").toLowerCase() === "true";
   $("m-slug").textContent = state.slug ?? "";
   md.value = cur.body ?? "";
   for (const b of $("lang").querySelectorAll("button")) b.classList.toggle("is-on", b.dataset.lang === state.lang);
-  $("m-date").disabled = $("m-tags").disabled = $("m-draft").disabled = state.lang === "es";
+  $("m-date").disabled = $("m-tags").disabled = $("m-draft").disabled = $("m-project").disabled = state.lang === "es";
   counts();
 }
 
@@ -103,6 +104,7 @@ function readForm() {
     state.en.meta.date = $("m-date").value;
     state.en.meta.tags = $("m-tags").value;
     state.en.meta.draft = $("m-draft").checked ? "true" : "false";
+    state.en.meta.project = $("m-project").checked ? "true" : "false";
   }
 }
 
@@ -240,6 +242,7 @@ md.addEventListener("keydown", (e) => {
 
 for (const id of ["m-title", "m-desc", "m-date", "m-tags"]) $(id).addEventListener("input", markDirty);
 $("m-draft").addEventListener("change", markDirty);
+$("m-project").addEventListener("change", markDirty);
 
 $("lang").addEventListener("click", async (e) => {
   const b = e.target.closest("button");
