@@ -1,7 +1,7 @@
 ---
-title: decoding a file stored on my bathroom door
+title: decoding a file stored on my bathroom door [WIP]
 date: 2026-08-30
-draft: true
+draft: false
 description: one bright idea
 project: true
 ---
@@ -14,13 +14,22 @@ this is an idea I've been thinking about for a while, and has been resonating wi
 
 the whole endeavour boils down to the fact that you can decode whatever you desire to produce your desired output, provided you have the right algorithm or mechanism to achieve that. metaphorically, and in a funny way, it's like the saying "make whatever you think of it". it's an analogue of overthinking a situation and convincing yourself (through your neuron algorithm) that the idea you made up in your mind about it is exactly what the situation actually is. 
 
-I do think there might be something useful here, on the contrary to this more human example, given the mechanism that we build to decode this is transferable and has a sort of anchor in physical reality, as well as a source of semi-consistency. I say semi because as we will see or can probably deduce, it all depends on the way we capture our source.
+I do think there might be something useful here, on the contrary to this more human example, given the mechanism that we build to decode this is transferable and has a sort of anchor in physical reality, as well as a source of semi-consistency. I say semi because as we will see or can probably deduce, it all depends on the way we capture our source, and the reliability of our consistency when capturing it (OR how we can correct for a relative lack of it, if our tools allow it).
 
 ### the bathroom door
 ![bathroomdoorcrop](bathroomdoorcrop-4.jpg)
 that's my unassuming bathroom door that I was looking at when I had this idea, and by tweaking a lot of parameters on Krita, an image editing app, I managed to get a fairly high contrast image of the wood marks on a small section of the door.
 
-its safe to say 
+its safe to say given the amount of time it took just to do this, I knew it wasn't going to be as easy as I expected, but I had the small hope after some work all of this manual experimentation to resolve an image from which data could be decoded from, maybe would be streamlined.
+
+here's my first result after playing around a bit:
+![2 bathroomdoorcontrasttest1](2_bathroomdoorcontrasttest1.jpg)
+it's really bad,
+
+by desaturating it to make it b&w, and using the "burn" filter, which I guess increases contrast, I managed to get this afterwards:
+![2 bathroomdoorcontrasttest2](2_bathroomdoorcontrasttest2.jpg)
+and okay, I know it's still really bad, but there's a glimmer of hope in my mind that maybe I could make this work.
+
 
 
 
