@@ -4,6 +4,7 @@ date: 2026-08-30
 draft: false
 description: a bright idea
 project: true
+tags: steganography
 ---
 
 ## BACKground
