@@ -73,6 +73,7 @@ async function open(slug) {
   state.es = post.es ? { meta: post.es.meta, body: post.es.body } : null;
   state.lang = "en";
   fillForm();
+  restoreBackup();
   await loadList();
   render();
   $("meta").hidden = false;
@@ -108,9 +109,48 @@ function readForm() {
   }
 }
 
+function backupKey(lang) {
+  return `ft-backup:${state.slug}:${lang}`;
+}
+
+function writeBackup() {
+  if (!state.slug) return;
+  try {
+    localStorage.setItem(backupKey(state.lang), JSON.stringify({
+      time: Date.now(),
+      body: md.value,
+      title: $("m-title").value,
+      description: $("m-desc").value,
+    }));
+  } catch {}
+}
+
+function restoreBackup() {
+  if (!state.slug) return;
+  try {
+    const raw = localStorage.getItem(backupKey(state.lang));
+    if (!raw) return;
+    const b = JSON.parse(raw);
+    if (b.body === md.value) {
+      localStorage.removeItem(backupKey(state.lang));
+      return;
+    }
+    const when = new Date(b.time).toLocaleString();
+    if (confirm(`Found a local backup of this post (${state.lang}) from ${when} that never reached disk.\n\nRestore it? (cancel discards the backup)`)) {
+      md.value = b.body;
+      if (b.title) $("m-title").value = b.title;
+      if (b.description) $("m-desc").value = b.description;
+      markDirty();
+    } else {
+      localStorage.removeItem(backupKey(state.lang));
+    }
+  } catch {}
+}
+
 function markDirty() {
   state.dirty = true;
   $("saved").textContent = "unsaved";
+  writeBackup();
   clearTimeout(state.saveTimer);
   state.saveTimer = setTimeout(save, 900);
   clearTimeout(state.renderTimer);
@@ -126,11 +166,17 @@ async function save() {
   try {
     await api("PUT", `/api/posts/${state.slug}`, { lang: state.lang, meta, body: cur.body });
     state.dirty = false;
+    try { localStorage.removeItem(backupKey(state.lang)); } catch {}
+    status("ready");
     $("saved").textContent = "saved " + new Date().toLocaleTimeString();
     await loadList();
     gitStatus();
   } catch (e) {
-    toast("save failed: " + e.message, true);
+    status("SAVE FAILED — retrying", true);
+    $("saved").textContent = "NOT SAVED";
+    toast("save failed: " + e.message + " — your text is backed up in this browser and saving will be retried", true);
+    clearTimeout(state.saveTimer);
+    state.saveTimer = setTimeout(save, 4000);
   }
 }
 
@@ -270,6 +316,7 @@ $("lang").addEventListener("click", async (e) => {
   }
   state.lang = lang;
   fillForm();
+  restoreBackup();
   render();
 });
 

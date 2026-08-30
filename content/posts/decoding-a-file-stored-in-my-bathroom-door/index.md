@@ -30,14 +30,14 @@ by desaturating it to make it b&w, and using the "burn" filter, which I guess in
 ![2 bathroomdoorcontrasttest2](2_bathroomdoorcontrasttest2.jpg)
 it was still pretty bad, but there was a glimmer of hope in my mind that maybe I could make this work.
 
-## first babysteps
-as I said in my introduction post, this 
+## babysteps
 
 
+### thoughts and info:
 
-### unrelated
-**thoughts and info:**
 - write in past tense and more formally
 - probably a yt video demonstration of it working once it is
 - maybe some sort of canary to know if the data can (probably) be decoded with the current decoding conditions
 - an app
+
+
