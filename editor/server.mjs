@@ -111,8 +111,12 @@ app.post("/api/render", (req, res) => {
   res.type("html").send(renderPostPage(post, lang === "es" ? "es" : "en"));
 });
 
-app.post("/api/build", (req, res) => {
-  res.json({ built: build() });
+app.post("/api/build", async (req, res) => {
+  try {
+    res.json({ built: await build() });
+  } catch (e) {
+    res.status(500).json({ error: String(e.message) });
+  }
 });
 
 app.get("/api/status", async (req, res) => {
@@ -133,7 +137,7 @@ app.get("/api/status", async (req, res) => {
 app.post("/api/publish", async (req, res) => {
   const message = String(req.body?.message ?? "").trim() || `publish ${new Date().toISOString().slice(0, 16).replace("T", " ")}`;
   try {
-    const built = build();
+    const built = await build();
     await exec("git", ["add", "-A"], { cwd: root });
     const st = await exec("git", ["status", "--porcelain"], { cwd: root });
     if (st.stdout.trim()) await exec("git", ["commit", "-q", "-m", message], { cwd: root });

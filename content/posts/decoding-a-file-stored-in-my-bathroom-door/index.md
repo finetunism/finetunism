@@ -2,7 +2,7 @@
 title: decoding a file stored on my bathroom door [WIP]
 date: 2026-08-30
 draft: false
-description: one bright idea
+description: a bright idea
 project: true
 ---
 
