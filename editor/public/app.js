@@ -145,6 +145,18 @@ async function render() {
       meta: cur.meta,
       body: cur.body,
     });
+    const key = `${state.slug}:${state.lang}`;
+    const doc = pv.contentDocument;
+    if (pv.dataset.key === key && doc?.querySelector(".post__body")) {
+      const next = new DOMParser().parseFromString(html, "text/html");
+      for (const sel of [".post__title", ".post__tags", ".post__date", ".post__body"]) {
+        const a = doc.querySelector(sel);
+        const b = next.querySelector(sel);
+        if (a && b && a.innerHTML !== b.innerHTML) a.innerHTML = b.innerHTML;
+      }
+      return;
+    }
+    pv.dataset.key = key;
     const top = pv.contentWindow?.scrollY ?? 0;
     pv.srcdoc = html.replace("<head>", `<head><base href="/posts/${state.slug}/">`);
     pv.onload = () => {
