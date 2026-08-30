@@ -33,6 +33,7 @@ by desaturating it to make it b&w, and using the "burn" filter, which I guess in
 and okay, I know it's still really bad, but there's a glimmer of hope in my mind that maybe I could make this work.
 
 
-
-
-
+**thoughts and info:**
+- write in past tense and more formally
+- maybe some sort of canary to know if the data can (probably) be decoded with the current decoding conditions
+- an app
