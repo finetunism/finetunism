@@ -38,11 +38,18 @@ export default {
       lang = m[1];
       url.pathname = m[2] || "/";
     }
+    if (!lang) lang = pickLang(request.headers.get("accept-language"));
 
-    const res = await env.ASSETS.fetch(new Request(url, request));
+    let res = null;
+    if (lang === "es" && !/\.[a-z0-9]+$/i.test(url.pathname)) {
+      const esUrl = new URL(url);
+      esUrl.pathname = url.pathname.replace(/\/?$/, "/") + "index.es";
+      const esRes = await env.ASSETS.fetch(new Request(esUrl, request));
+      if (esRes.ok) res = esRes;
+    }
+    if (!res) res = await env.ASSETS.fetch(new Request(url, request));
     if (!(res.headers.get("content-type") || "").includes("text/html")) return res;
 
-    if (!lang) lang = pickLang(request.headers.get("accept-language"));
     const headers = new Headers(res.headers);
     headers.append("Vary", "Accept-Language");
     headers.set("Content-Language", lang);

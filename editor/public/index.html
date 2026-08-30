@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>finetunism · editor</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/editor.css">
+</head>
+<body class="ed">
+
+  <header class="ed-top">
+    <div class="ed-brand">finetunism <span>// editor</span></div>
+    <div class="ed-top__mid">
+      <span id="status" class="ed-status">ready</span>
+    </div>
+    <div class="ed-top__right">
+      <span id="git" class="ed-git"></span>
+      <button id="btn-build" class="ed-btn" title="Render all published posts into site/">build</button>
+      <button id="btn-publish" class="ed-btn ed-btn--red" title="Build, commit and push">publish</button>
+    </div>
+  </header>
+
+  <div class="ed-main">
+
+    <aside class="ed-side" id="side">
+      <div class="ed-side__head">
+        <span>posts</span>
+        <button id="btn-new" class="ed-btn ed-btn--sm">+ new</button>
+      </div>
+      <ul id="post-list" class="ed-list"></ul>
+    </aside>
+
+    <section class="ed-editor" id="editor-pane">
+      <div class="ed-meta" id="meta">
+        <div class="ed-meta__row">
+          <input id="m-title" class="ed-input ed-input--title" placeholder="title" autocomplete="off">
+          <div class="ed-lang" id="lang">
+            <button data-lang="en" class="is-on">en</button>
+            <button data-lang="es">es</button>
+          </div>
+        </div>
+        <div class="ed-meta__row ed-meta__row--small">
+          <label>date <input id="m-date" class="ed-input" type="date"></label>
+          <label>tags <input id="m-tags" class="ed-input" placeholder="a, b, c" autocomplete="off"></label>
+          <label class="ed-check"><input id="m-draft" type="checkbox"> draft</label>
+          <span class="ed-slug" id="m-slug"></span>
+          <button id="btn-delete" class="ed-btn ed-btn--sm ed-btn--ghost" title="Delete this post">delete</button>
+        </div>
+        <div class="ed-meta__row ed-meta__row--small">
+          <label class="ed-desc">description <input id="m-desc" class="ed-input" placeholder="optional one-liner for the front page" autocomplete="off"></label>
+        </div>
+      </div>
+
+      <div class="ed-toolbar" id="toolbar">
+        <button data-act="h2" title="Section (Ctrl+2)">h2</button>
+        <button data-act="h3" title="Sub-section (Ctrl+3)">h3</button>
+        <span class="ed-toolbar__sep"></span>
+        <button data-act="bold" title="Bold (Ctrl+B)"><b>b</b></button>
+        <button data-act="italic" title="Italic (Ctrl+I)"><i>i</i></button>
+        <button data-act="strike" title="Strikethrough"><s>s</s></button>
+        <button data-act="code" title="Inline code (Ctrl+E)">`c`</button>
+        <span class="ed-toolbar__sep"></span>
+        <button data-act="link" title="Link (Ctrl+K)">link</button>
+        <button data-act="image" title="Insert image (or drop / paste one)">img</button>
+        <span class="ed-toolbar__sep"></span>
+        <button data-act="quote" title="Quote">&gt; quote</button>
+        <button data-act="ul" title="Bullet list">• list</button>
+        <button data-act="ol" title="Numbered list">1. list</button>
+        <button data-act="task" title="Task list">[ ] task</button>
+        <button data-act="pre" title="Code block">```</button>
+        <button data-act="table" title="Table">table</button>
+        <button data-act="hr" title="Divider">---</button>
+        <span class="ed-toolbar__grow"></span>
+        <button data-act="images" title="Images in this post">files</button>
+      </div>
+
+      <textarea id="md" class="ed-md" spellcheck="true" placeholder="write..."></textarea>
+      <input id="file" type="file" accept="image/*" multiple hidden>
+
+      <div class="ed-foot">
+        <span id="counts"></span>
+        <span id="saved"></span>
+      </div>
+    </section>
+
+    <section class="ed-preview" id="preview-pane">
+      <div class="ed-preview__bar">
+        <span>preview</span>
+        <div class="ed-seg" id="pv-width">
+          <button data-w="desktop" class="is-on">desktop</button>
+          <button data-w="mobile">mobile</button>
+        </div>
+        <label class="ed-check"><input id="pv-sync" type="checkbox" checked> sync scroll</label>
+      </div>
+      <div class="ed-preview__frame">
+        <iframe id="pv" title="preview"></iframe>
+      </div>
+    </section>
+
+  </div>
+
+  <div id="images-modal" class="ed-modal" hidden>
+    <div class="ed-modal__box">
+      <div class="ed-modal__head">
+        <span>images</span>
+        <button id="images-close" class="ed-btn ed-btn--sm">close</button>
+      </div>
+      <div id="images-grid" class="ed-images"></div>
+      <p class="ed-hint">click a thumbnail to insert it · drop or paste images straight into the text</p>
+    </div>
+  </div>
+
+  <div id="toast" class="ed-toast" hidden></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

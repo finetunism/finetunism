@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{lang}}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FINETUNISM</title>
+  <title>{{title}}</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -42,46 +42,12 @@
   </header>
 
   <nav class="nav">
-    <a href="/" aria-current="page" data-es="Inicio">Home</a>
+    <a href="/"{{home_current}} data-es="Inicio">Home</a>
     <a href="/#projects" data-es="Proyectos">Projects</a>
     <a href="/#links" data-es="Links">Links</a>
   </nav>
 
-  <div class="layout">
-
-    <main>
-      <h2 class="section-title" data-es="últimos">latest</h2>
-
-
-    </main>
-
-    <aside>
-      <div class="sidebar-box" id="projects">
-        <h3 data-es="Proyectos">Projects</h3>
-        <ul>
-          <li><a href="#">project one</a></li>
-          <li><a href="#">project two</a></li>
-          <li><a href="#">project three</a></li>
-        </ul>
-      </div>
-
-      <div class="sidebar-box" id="links">
-        <h3 data-es="Links">Links</h3>
-        <ul>
-          <li><a href="#">github</a></li>
-          <li><a href="#">email</a></li>
-          <li><a href="#">rss</a></li>
-        </ul>
-      </div>
-
-      <div class="sidebar-box">
-        <h3 data-es="Visitantes">Visitors</h3>
-        <span class="hit-counter">000001</span>
-      </div>
-    </aside>
-
-  </div>
-
+{{content}}
 
   <footer class="footer">
     &copy; 2026 finetunism
