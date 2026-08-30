@@ -23,7 +23,7 @@ I do think there might be something useful here, on the contrary to this more hu
 that's my unassuming bathroom door that I was looking at when I had this idea, and by tweaking a lot of parameters on *[Krita](https://krita.org)*, an open source image editing app I barely know how to use, I managed to get a fairly high contrast image of the wood marks on a small section of the door:
 
 ![2 bathroomdoorcontrasttest1](2_bathroomdoorcontrasttest1.jpg)
-pretty bad,
+*pretty bad,*
 
 its safe to say I knew then and there it wasn't going to be as easy as I expected, but I had the small hope after some work all of this manual experimentation to resolve an image from which data could be decoded from, maybe would be streamlined.
 
