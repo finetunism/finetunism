@@ -36,6 +36,10 @@ after a short window of thinking about what is it that I was doing, I came to th
 
 that is, implementing a mechanism, in the context of my bathroom door, that would allow a piece of code to understand where should it start reading data from, and for this, I would have to spend some time at my bathroom staring at the door, trying to see if I could spot some segment of it which would be easily identifiable by a piece of code sort of reliably.
 
+the logical place to do this is the door frame, or the bevels that surround the wood mark pattern we're trying to read. this is fine, but for this whole idea to work, I'll have to decode the wood markings and structure them in a computer-readable format. if I'm going to be implementing that anyways, might as well decode the magic bytes from the same source.
+
+this also brings a sort of redundancy to the accuracy and precision of the system, because the door frame might *and usually is* more noticeable than the wood markings, so by ensuring we read our "magic bytes" from these marks, we're also ensuring that the readability of the rest of the data is generally fine.
+
 ### thoughts and info:
 
 - write in past tense and more formally
