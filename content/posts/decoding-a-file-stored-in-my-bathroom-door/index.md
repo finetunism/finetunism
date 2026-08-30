@@ -44,7 +44,6 @@ this also brings a sort of redundancy to the accuracy and precision of the syste
 
 - write in past tense and more formally
 - probably a yt video demonstration of it working once it is
-- maybe some sort of canary to know if the data can (probably) be decoded with the current decoding conditions
 - an app
 
 
