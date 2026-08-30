@@ -38,7 +38,7 @@ that is, implementing a mechanism, in the context of my bathroom door, that woul
 
 the logical place to do this is the door frame, or the bevels that surround the wood mark pattern we're trying to read. this is fine, but for this whole idea to work, I'll have to decode the wood markings and structure them in a computer-readable format. if I'm going to be implementing that anyways, might as well decode the magic bytes from the same source.
 
-this also brings a sort of redundancy to the accuracy and precision of the system, because the door frame might *and usually is* more noticeable than the wood markings, but if we read our "magic bytes" from the markings, we're ensuring that the readability of the rest of the data is generally fine.
+this also brings a sort of redundancy to the accuracy and precision of the system, because the door frame might *and usually is* more noticeable than the wood markings, but if we read our "magic bytes" from the markings, we're ensuring that the readability of the rest of the data is generally fine, which in my opinion builds a more solid system overall.
 
 ### thoughts and info:
 
