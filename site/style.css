@@ -1,14 +1,9 @@
-/* ============================================================
-   FINETUNISM — 90s punk zine stylesheet
-   black / red / white · CSS only
-   ============================================================ */
-
 :root {
   --black: #0a0a0a;
-  --ink: #f2f0eb;          /* off-white body text */
-  --red: #ff0033;          /* punk red */
+  --ink: #f2f0eb;
+  --red: #ff0033;
   --red-dark: #b3001f;
-  --paper: #111111;        /* card background, barely off-black */
+  --paper: #111111;
   --border-w: 3px;
   --font-display: "Impact", "Haettenschweiler", "Arial Narrow Bold", sans-serif;
   --font-body: "Verdana", "Geneva", "DejaVu Sans", sans-serif;
@@ -22,7 +17,7 @@ html { color-scheme: dark; }
 body {
   margin: 0;
   background-color: var(--black);
-  /* faint diagonal stripes, like a photocopied poster */
+
   background-image: repeating-linear-gradient(
     -45deg,
     transparent 0 14px,
@@ -52,17 +47,12 @@ a:hover {
   text-decoration: none;
 }
 
-/* ------------------------------------------------------------
-   Masthead
-   ------------------------------------------------------------ */
-
 .masthead {
   padding: 40px 20px 28px;
   text-align: center;
   border-bottom: var(--border-w) solid var(--red);
 }
 
-/* the title sits in a fixed-padding stage; decorations are pinned around it */
 .stage {
   position: relative;
   display: inline-block;
@@ -88,29 +78,27 @@ a:hover {
 .deco--xl { font-size: 26px; }
 .deco .w  { color: var(--ink); }
 
-/* positions — asymmetric on purpose. left cluster is denser, right side sparser */
-.deco[data-d="1"]  { top: 14px;  left: 28px; }              /* big crosshair */
-.deco[data-d="2"]  { top: 22px;  left: 118px; }             /* big red square */
-.deco[data-d="3"]  { top: 48px;  left: 150px; }             /* white dot */
-.deco[data-d="4"]  { top: 62px;  left: 168px; }             /* hollow dot */
-.deco[data-d="5"]  { top: 20px;  left: 250px; }             /* [ v0.1 ] */
-.deco[data-d="6"]  { top: 30px;  left: 470px; }             /* white + */
-.deco[data-d="7"]  { top: 40px;  left: 610px; }             /* ┌─── */
-.deco[data-d="8"]  { top: 8px;   right: 150px; }            /* white hollow square */
-.deco[data-d="9"]  { top: 28px;  right: 26px; }             /* ───┐ */
-.deco[data-d="10"] { top: 92px;  right: 70px; }             /* red + */
-.deco[data-d="11"] { top: 108px; right: 128px; }            /* big red square */
-.deco[data-d="12"] { bottom: 30px; right: 44px; }           /* ▪ ▪ */
-.deco[data-d="13"] { bottom: 16px; left: 40px; }            /* vine bit */
-.deco[data-d="14"] { top: 64px;  left: 96px; line-height: 1.6; }  /* dotted vertical */
-.deco[data-d="15"] { bottom: 22px; left: 250px; }           /* └── */
-.deco[data-d="16"] { bottom: 14px; right: 250px; }          /* x:21 y:03 */
-.deco[data-d="17"] { bottom: 40px; right: 190px; }          /* ──┘ */
-.deco[data-d="18"] { top: 120px; left: 190px; }             /* small crosshair */
-.deco[data-d="19"] { bottom: 46px; left: 130px; }           /* // */
-.deco[data-d="20"] { top: 74px;  right: 110px; }            /* tiny hollow dot */
+.deco[data-d="1"]  { top: 14px;  left: 28px; }
+.deco[data-d="2"]  { top: 22px;  left: 118px; }
+.deco[data-d="3"]  { top: 48px;  left: 150px; }
+.deco[data-d="4"]  { top: 62px;  left: 168px; }
+.deco[data-d="5"]  { top: 20px;  left: 250px; }
+.deco[data-d="6"]  { top: 30px;  left: 470px; }
+.deco[data-d="7"]  { top: 40px;  left: 610px; }
+.deco[data-d="8"]  { top: 8px;   right: 150px; }
+.deco[data-d="9"]  { top: 28px;  right: 26px; }
+.deco[data-d="10"] { top: 92px;  right: 70px; }
+.deco[data-d="11"] { top: 108px; right: 128px; }
+.deco[data-d="12"] { bottom: 30px; right: 44px; }
+.deco[data-d="13"] { bottom: 16px; left: 40px; }
+.deco[data-d="14"] { top: 64px;  left: 96px; line-height: 1.6; }
+.deco[data-d="15"] { bottom: 22px; left: 250px; }
+.deco[data-d="16"] { bottom: 14px; right: 250px; }
+.deco[data-d="17"] { bottom: 40px; right: 190px; }
+.deco[data-d="18"] { top: 120px; left: 190px; }
+.deco[data-d="19"] { bottom: 46px; left: 130px; }
+.deco[data-d="20"] { top: 74px;  right: 110px; }
 
-/* one-line flourish that stands in for the decorations on small screens */
 .ornament--small {
   display: none;
   margin: 10px 0 0;
@@ -136,13 +124,13 @@ a:hover {
   font-family: var(--font-display);
   flex: 0 0 auto;
   font-size: clamp(30px, 5vw, 64px);
-  font-weight: normal;          /* Impact is already heavy; fake-bold distorts it */
+  font-weight: normal;
   line-height: 0.95;
-  letter-spacing: 0.28em;       /* "f i n e t u n i s m" */
-  padding-left: 0.28em;         /* compensates for trailing letter-spacing so it centres */
+  letter-spacing: 0.28em;
+  padding-left: 0.28em;
   text-transform: lowercase;
   color: var(--ink);
-  /* misregistered screenprint: red pass slightly off */
+
   text-shadow:
     4px 4px 0 var(--red),
     -2px -2px 0 var(--red-dark);
@@ -167,10 +155,6 @@ a:hover {
   background: var(--ink);
   padding: 2px 12px;
 }
-
-/* ------------------------------------------------------------
-   Nav
-   ------------------------------------------------------------ */
 
 .nav {
   display: flex;
@@ -201,7 +185,7 @@ a:hover {
 }
 
 @media (max-width: 600px) {
-  /* equal-width cells so the nav never orphans an item onto a second row */
+
   .nav a {
     flex: 1 1 0;
     text-align: center;
@@ -212,10 +196,6 @@ a:hover {
   .nav a:first-child { border-left: none; }
   .nav a:last-child  { border-right: none; }
 }
-
-/* ------------------------------------------------------------
-   Layout
-   ------------------------------------------------------------ */
 
 .layout {
   display: grid;
@@ -232,10 +212,6 @@ a:hover {
   }
 }
 
-/* ------------------------------------------------------------
-   Section headers — heavy zine dividers
-   ------------------------------------------------------------ */
-
 .section-title {
   font-family: var(--font-display);
   font-size: 26px;
@@ -247,7 +223,6 @@ a:hover {
   white-space: nowrap;
 }
 
-/* ASCII flourish either side: -=~=~=( l a t e s t )=~=~=- */
 .section-title::before,
 .section-title::after {
   font-family: var(--font-mono);
@@ -269,7 +244,6 @@ a:hover {
   .masthead .tagline { font-size: 11px; letter-spacing: 2px; }
 }
 
-/* blinking text, the 1996 <blink> tag reborn */
 .blink {
   color: var(--red);
   font-family: var(--font-mono);
@@ -284,10 +258,6 @@ a:hover {
 @media (prefers-reduced-motion: reduce) {
   .blink { animation: none; }
 }
-
-/* ------------------------------------------------------------
-   Post entries — BBS / terminal log style, ASCII rules
-   ------------------------------------------------------------ */
 
 .post {
   margin: 0 0 44px;
@@ -370,10 +340,6 @@ a:hover {
   border-top: 1px dashed var(--red-dark);
 }
 
-/* ------------------------------------------------------------
-   Sidebar
-   ------------------------------------------------------------ */
-
 .sidebar-box {
   border: var(--border-w) dashed var(--red);
   padding: 16px 18px;
@@ -411,7 +377,6 @@ a:hover {
   font-size: 13px;
 }
 
-/* fake hit counter */
 .hit-counter {
   font-family: var(--font-mono);
   font-size: 18px;
@@ -423,10 +388,6 @@ a:hover {
   display: inline-block;
   padding: 2px 10px;
 }
-
-/* ------------------------------------------------------------
-   Footer
-   ------------------------------------------------------------ */
 
 .footer {
   border-top: var(--border-w) solid var(--red);
