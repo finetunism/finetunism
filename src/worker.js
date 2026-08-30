@@ -4,14 +4,27 @@ const LANGS = { en: "en", es: "es", ca: "es" };
 const BOT = /bot|crawl|spider|slurp|preview|fetch|monitor|curl|wget|python|headless/i;
 
 export class Counter extends DurableObject {
-  async hit(increment) {
+  async hit(visitor) {
     let n = (await this.ctx.storage.get("n")) || 0;
-    if (increment) {
-      n += 1;
-      await this.ctx.storage.put("n", n);
+    if (visitor) {
+      const key = "v:" + visitor;
+      const seen = await this.ctx.storage.get(key);
+      if (!seen) {
+        await this.ctx.storage.put(key, 1);
+        n += 1;
+        await this.ctx.storage.put("n", n);
+      }
     }
     return n;
   }
+}
+
+async function visitorId(request) {
+  const ip = request.headers.get("cf-connecting-ip") || "";
+  const ua = request.headers.get("user-agent") || "";
+  const data = new TextEncoder().encode(`${ip}|${ua}`);
+  const digest = await crypto.subtle.digest("SHA-256", data);
+  return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
 function pickLang(header) {
@@ -83,7 +96,7 @@ export default {
     if (res.ok && request.method === "GET") {
       const human = !BOT.test(request.headers.get("user-agent") || "");
       const stub = env.COUNTER.get(env.COUNTER.idFromName("site"));
-      const n = await stub.hit(human);
+      const n = await stub.hit(human ? await visitorId(request) : null);
       rewriter.on(".hit-counter", new HitCounter(n));
     }
     if (lang === "es") {
