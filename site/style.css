@@ -1,0 +1,445 @@
+/* ============================================================
+   FINETUNISM — 90s punk zine stylesheet
+   black / red / white · CSS only
+   ============================================================ */
+
+:root {
+  --black: #0a0a0a;
+  --ink: #f2f0eb;          /* off-white body text */
+  --red: #ff0033;          /* punk red */
+  --red-dark: #b3001f;
+  --paper: #111111;        /* card background, barely off-black */
+  --border-w: 3px;
+  --font-display: "Impact", "Haettenschweiler", "Arial Narrow Bold", sans-serif;
+  --font-body: "Verdana", "Geneva", "DejaVu Sans", sans-serif;
+  --font-mono: "Courier New", "Courier", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { color-scheme: dark; }
+
+body {
+  margin: 0;
+  background-color: var(--black);
+  /* faint diagonal stripes, like a photocopied poster */
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 14px,
+    rgba(255, 0, 51, 0.035) 14px 16px
+  );
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+::selection {
+  background: var(--red);
+  color: var(--black);
+}
+
+a {
+  color: var(--red);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  background: var(--red);
+  color: var(--black);
+  text-decoration: none;
+}
+
+/* ------------------------------------------------------------
+   Masthead
+   ------------------------------------------------------------ */
+
+.masthead {
+  padding: 40px 20px 28px;
+  text-align: center;
+  border-bottom: var(--border-w) solid var(--red);
+}
+
+/* the title sits in a fixed-padding stage; decorations are pinned around it */
+.stage {
+  position: relative;
+  display: inline-block;
+  padding: 58px 190px 64px;
+}
+
+.deco {
+  position: absolute;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--red);
+  pointer-events: none;
+  user-select: none;
+  white-space: pre;
+}
+
+.deco--w  { color: var(--ink); }
+.deco--sm { font-size: 11px; }
+.deco--lg { font-size: 18px; line-height: 1.05; }
+.deco--xl { font-size: 26px; }
+.deco .w  { color: var(--ink); }
+
+/* positions — asymmetric on purpose. left cluster is denser, right side sparser */
+.deco[data-d="1"]  { top: 14px;  left: 28px; }              /* big crosshair */
+.deco[data-d="2"]  { top: 22px;  left: 118px; }             /* big red square */
+.deco[data-d="3"]  { top: 48px;  left: 150px; }             /* white dot */
+.deco[data-d="4"]  { top: 62px;  left: 168px; }             /* hollow dot */
+.deco[data-d="5"]  { top: 20px;  left: 250px; }             /* [ v0.1 ] */
+.deco[data-d="6"]  { top: 30px;  left: 470px; }             /* white + */
+.deco[data-d="7"]  { top: 40px;  left: 610px; }             /* ┌─── */
+.deco[data-d="8"]  { top: 8px;   right: 150px; }            /* white hollow square */
+.deco[data-d="9"]  { top: 28px;  right: 26px; }             /* ───┐ */
+.deco[data-d="10"] { top: 92px;  right: 70px; }             /* red + */
+.deco[data-d="11"] { top: 108px; right: 128px; }            /* big red square */
+.deco[data-d="12"] { bottom: 30px; right: 44px; }           /* ▪ ▪ */
+.deco[data-d="13"] { bottom: 16px; left: 40px; }            /* vine bit */
+.deco[data-d="14"] { top: 64px;  left: 96px; line-height: 1.6; }  /* dotted vertical */
+.deco[data-d="15"] { bottom: 22px; left: 250px; }           /* └── */
+.deco[data-d="16"] { bottom: 14px; right: 250px; }          /* x:21 y:03 */
+.deco[data-d="17"] { bottom: 40px; right: 190px; }          /* ──┘ */
+.deco[data-d="18"] { top: 120px; left: 190px; }             /* small crosshair */
+.deco[data-d="19"] { bottom: 46px; left: 130px; }           /* // */
+.deco[data-d="20"] { top: 74px;  right: 110px; }            /* tiny hollow dot */
+
+/* one-line flourish that stands in for the decorations on small screens */
+.ornament--small {
+  display: none;
+  margin: 10px 0 0;
+  font-family: var(--font-mono);
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--red);
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.ornament--small .w { color: var(--ink); }
+
+@media (max-width: 1000px) {
+  .deco { display: none; }
+  .stage { padding: 0; }
+  .ornament--small { display: block; }
+}
+
+.masthead h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  flex: 0 0 auto;
+  font-size: clamp(30px, 5vw, 64px);
+  font-weight: normal;          /* Impact is already heavy; fake-bold distorts it */
+  line-height: 0.95;
+  letter-spacing: 0.28em;       /* "f i n e t u n i s m" */
+  padding-left: 0.28em;         /* compensates for trailing letter-spacing so it centres */
+  text-transform: lowercase;
+  color: var(--ink);
+  /* misregistered screenprint: red pass slightly off */
+  text-shadow:
+    4px 4px 0 var(--red),
+    -2px -2px 0 var(--red-dark);
+}
+
+.masthead h1 a {
+  color: inherit;
+  text-decoration: none;
+  background: none;
+}
+
+.masthead h1 a:hover { color: inherit; background: none; }
+
+.masthead .tagline {
+  margin: 14px auto 0;
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--ink);
+  padding: 2px 12px;
+}
+
+/* ------------------------------------------------------------
+   Nav
+   ------------------------------------------------------------ */
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  border-bottom: var(--border-w) solid var(--red);
+  background: var(--black);
+}
+
+.nav a {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 10px 26px;
+  border-right: 1px solid var(--red-dark);
+}
+
+.nav a:first-child { border-left: 1px solid var(--red-dark); }
+
+.nav a:hover,
+.nav a[aria-current="page"] {
+  background: var(--red);
+  color: var(--black);
+}
+
+@media (max-width: 600px) {
+  /* equal-width cells so the nav never orphans an item onto a second row */
+  .nav a {
+    flex: 1 1 0;
+    text-align: center;
+    padding: 10px 6px;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  .nav a:first-child { border-left: none; }
+  .nav a:last-child  { border-right: none; }
+}
+
+/* ------------------------------------------------------------
+   Layout
+   ------------------------------------------------------------ */
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 28px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+}
+
+@media (max-width: 760px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------------------------------------------------
+   Section headers — heavy zine dividers
+   ------------------------------------------------------------ */
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: normal;
+  letter-spacing: 0.35em;
+  text-transform: lowercase;
+  color: var(--ink);
+  margin: 0 0 24px;
+  white-space: nowrap;
+}
+
+/* ASCII flourish either side: -=~=~=( l a t e s t )=~=~=- */
+.section-title::before,
+.section-title::after {
+  font-family: var(--font-mono);
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 0;
+  color: var(--red);
+  vertical-align: middle;
+}
+
+.section-title::before { content: "-=~=~=~=(  "; }
+.section-title::after  { content: "  )=~=~=~=-"; }
+
+@media (max-width: 480px) {
+  .section-title { font-size: 22px; letter-spacing: 0.25em; }
+  .section-title::before { content: "-=~=( "; }
+  .section-title::after  { content: " )=~=-"; }
+  .masthead { padding: 28px 12px 22px; }
+  .masthead .tagline { font-size: 11px; letter-spacing: 2px; }
+}
+
+/* blinking text, the 1996 <blink> tag reborn */
+.blink {
+  color: var(--red);
+  font-family: var(--font-mono);
+  font-weight: bold;
+  animation: blink 1.1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blink { animation: none; }
+}
+
+/* ------------------------------------------------------------
+   Post entries — BBS / terminal log style, ASCII rules
+   ------------------------------------------------------------ */
+
+.post {
+  margin: 0 0 44px;
+}
+
+.post__head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-weight: bold;
+  color: var(--red);
+}
+
+.post__date {
+  font-size: 14px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.post__rule {
+  flex: 1;
+  height: 0;
+  border-top: 3px double var(--red);
+}
+
+.post h2 {
+  margin: 12px 0 4px;
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 1.1;
+  letter-spacing: 0.25em;
+}
+
+.post h2 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.post h2 a:hover {
+  background: var(--red);
+  color: var(--black);
+}
+
+@media (max-width: 600px) {
+  .post h2 {
+    font-size: 26px;
+    letter-spacing: 0.1em;
+  }
+}
+
+.post h2 .blink {
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-left: 14px;
+  vertical-align: middle;
+}
+
+.post__tags {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--red);
+  margin: 0 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--red-dark);
+}
+
+.post p { margin: 0 0 12px; }
+
+.post__more {
+  font-family: var(--font-mono);
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.post__foot {
+  margin-top: 16px;
+  border-top: 1px dashed var(--red-dark);
+}
+
+/* ------------------------------------------------------------
+   Sidebar
+   ------------------------------------------------------------ */
+
+.sidebar-box {
+  border: var(--border-w) dashed var(--red);
+  padding: 16px 18px;
+  margin: 0 0 28px;
+}
+
+.sidebar-box h3 {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.sidebar-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+}
+
+.sidebar-box li {
+  padding: 3px 0;
+}
+
+.sidebar-box li::before {
+  content: "★ ";
+  color: var(--red);
+}
+
+.sidebar-box p {
+  margin: 0;
+  font-size: 13px;
+}
+
+/* fake hit counter */
+.hit-counter {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: var(--red);
+  background: var(--black);
+  border: 2px inset var(--red-dark);
+  display: inline-block;
+  padding: 2px 10px;
+}
+
+/* ------------------------------------------------------------
+   Footer
+   ------------------------------------------------------------ */
+
+.footer {
+  border-top: var(--border-w) solid var(--red);
+  padding: 22px 20px 34px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.footer .divider {
+  color: var(--red);
+  margin: 0 8px;
+}

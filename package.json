@@ -1,0 +1,11 @@
+{
+  "name": "finetunism",
+  "private": true,
+  "scripts": {
+    "preview": "python3 -m http.server 8000 --directory site",
+    "deploy": "wrangler pages deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}
