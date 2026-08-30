@@ -18,13 +18,13 @@ I do think there might be something useful here, on the contrary to this more hu
 
 ## laying the foundational logs
 ![bathroomdoorcrop](bathroomdoorcrop-4.jpg)
-that's my unassuming bathroom door that I was looking at when I had this idea, and by tweaking a lot of parameters on *Krita*, an image editing app, I managed to get a fairly high contrast image of the wood marks on a small section of the door.
+that's my unassuming bathroom door that I was looking at when I had this idea, and by tweaking a lot of parameters on *Krita*, an image editing app, I managed to get a fairly high contrast image of the wood marks on a small section of the door:
+![2 bathroomdoorcontrasttest1](2_bathroomdoorcontrasttest1.jpg)
+pretty bad,
 
 its safe to say given the amount of time it took just to do this, I knew it wasn't going to be as easy as I expected, but I had the small hope after some work all of this manual experimentation to resolve an image from which data could be decoded from, maybe would be streamlined.
 
-here's my first result after playing around a bit:
-![2 bathroomdoorcontrasttest1](2_bathroomdoorcontrasttest1.jpg)
-it's really bad,
+
 
 by desaturating it to make it b&w, and using the "burn" filter, which I guess increases contrast, I managed to get this afterwards:
 ![2 bathroomdoorcontrasttest2](2_bathroomdoorcontrasttest2.jpg)
