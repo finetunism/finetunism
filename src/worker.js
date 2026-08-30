@@ -1,4 +1,18 @@
+import { DurableObject } from "cloudflare:workers";
+
 const LANGS = { en: "en", es: "es", ca: "es" };
+const BOT = /bot|crawl|spider|slurp|preview|fetch|monitor|curl|wget|python|headless/i;
+
+export class Counter extends DurableObject {
+  async hit(increment) {
+    let n = (await this.ctx.storage.get("n")) || 0;
+    if (increment) {
+      n += 1;
+      await this.ctx.storage.put("n", n);
+    }
+    return n;
+  }
+}
 
 function pickLang(header) {
   const tags = (header || "")
@@ -29,6 +43,15 @@ class SetLang {
   }
 }
 
+class HitCounter {
+  constructor(n) {
+    this.value = String(n).padStart(6, "0");
+  }
+  element(el) {
+    el.setInnerContent(this.value);
+  }
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -53,12 +76,19 @@ export default {
     const headers = new Headers(res.headers);
     headers.append("Vary", "Accept-Language");
     headers.set("Content-Language", lang);
+    headers.set("Cache-Control", "no-store");
     const out = new Response(res.body, { status: res.status, headers });
-    if (lang !== "es") return out;
 
-    return new HTMLRewriter()
-      .on("html", new SetLang())
-      .on("[data-es]", new Translate())
-      .transform(out);
+    const rewriter = new HTMLRewriter();
+    if (res.ok && request.method === "GET") {
+      const human = !BOT.test(request.headers.get("user-agent") || "");
+      const stub = env.COUNTER.get(env.COUNTER.idFromName("site"));
+      const n = await stub.hit(human);
+      rewriter.on(".hit-counter", new HitCounter(n));
+    }
+    if (lang === "es") {
+      rewriter.on("html", new SetLang()).on("[data-es]", new Translate());
+    }
+    return rewriter.transform(out);
   },
 };
