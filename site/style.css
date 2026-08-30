@@ -76,6 +76,7 @@ a:hover {
   padding: 40px 20px 28px;
   text-align: center;
   border-bottom: var(--border-w) solid var(--red);
+  overflow: hidden;
 }
 
 .stage {
@@ -126,6 +127,7 @@ a:hover {
 
 @media (max-width: 1000px) {
   .stage { padding: 48px 30px 54px; max-width: 100%; }
+  .masthead h1 { font-size: clamp(20px, 6.8vw, 48px); }
 
   .deco     { font-size: 12px; }
   .deco--sm { font-size: 9px; }
