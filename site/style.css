@@ -1,3 +1,31 @@
+@font-face {
+  font-family: "FT Sans";
+  src: url("fonts/DejaVuSans.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FT Sans";
+  src: url("fonts/DejaVuSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FT Mono";
+  src: url("fonts/DejaVuSansMono.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FT Mono";
+  src: url("fonts/DejaVuSansMono-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
 :root {
   --black: #0a0a0a;
   --ink: #f2f0eb;
@@ -5,9 +33,9 @@
   --red-dark: #b3001f;
   --paper: #111111;
   --border-w: 3px;
-  --font-display: "Impact", "Haettenschweiler", "Arial Narrow Bold", sans-serif;
-  --font-body: "Verdana", "Geneva", "DejaVu Sans", sans-serif;
-  --font-mono: "Courier New", "Courier", monospace;
+  --font-display: "FT Sans", "DejaVu Sans", "Verdana", sans-serif;
+  --font-body: "FT Sans", "DejaVu Sans", "Verdana", sans-serif;
+  --font-mono: "FT Mono", "DejaVu Sans Mono", "Courier New", monospace;
 }
 
 * { box-sizing: border-box; }
