@@ -40,6 +40,10 @@ the logical place to do this is the door frame, or the bevels that surround the 
 
 this also brings a sort of redundancy to the accuracy and precision of the system, because the door frame might *and usually is* more noticeable than the wood markings, but if we read our "magic bytes" from the markings, we're ensuring that the readability of the rest of the data is generally fine, which in my opinion builds a more solid system overall.
 
+## coding
+on this project in particular, I felt that I needed to prove most of my hypotheses right before I had any type of AI digging its nails into it, I felt like I needed it to be provable, and also do it [my way](https://www.youtube.com/watch?v=MHTG0AhBFvc), even if it wasn't the most efficient way.
+I have to say I also wasn't eager to spend dozens of hours building a nice and consistent C++ pipeline, so I chose to start working on this on Python (which I know is extremely more comfortable at handling images) at least to the point where I could build it to a level that the theory was mostly in place. afterwards, I would have the possibility and freedom to port it to whatever I want to, which once the theory is in place I highly doubt I will care to do.
+
 ### thoughts and info:
 
 - write in past tense and more formally
