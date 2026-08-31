@@ -70,7 +70,7 @@
         <p class="post__tags"><span data-es="etiquetas:">tags:</span> steganography</p>
         <div class="post__body">
 <h2>BACKground</h2>
-<p>okay so hear me out, the other day I was taking a dump and while looking at my bathroom door, I wondered if I&#39;d be able to store a file using the wood marks on it. it ended up being a really fun thought experiment.</p>
+<p>okay so hear me out, the other day I was sitting on the toilet, as one does, and while looking at my bathroom door, I wondered if I&#39;d be able to store a file using the wood marks on it. it ended up being a really fun thought experiment.</p>
 <h2>the concept</h2>
 <p>this is an idea I&#39;ve been thinking about for a while, and has been resonating with me ever since I thought of it. for some reason I never did anything about it. I think it has something to do with the absurdity of it, and I don&#39;t even mean the decoding information from a bathroom door thing, but this whole concept in general.</p>
 <p>the whole endeavour boils down to the fact that you can decode whatever you desire to produce your desired output, provided you have the right algorithm or mechanism to achieve that. metaphorically, and in a funny way, it&#39;s like the saying &quot;make whatever you think of it&quot;. it&#39;s an analogue of overthinking a situation and convincing yourself (through your neuron algorithm) that the idea you made up in your mind about it is exactly what the situation actually is. </p>
@@ -89,9 +89,7 @@
 <p>that is, implementing a mechanism, in the context of my bathroom door, that would allow a piece of code to understand where should it start reading data from, and for this, I would have to spend some time at my bathroom staring at the door, trying to see if I could spot some segment of it which would be easily identifiable by a piece of code sort of reliably.</p>
 <p>the logical place to do this is the door frame, or the bevels that surround the wood mark pattern we&#39;re trying to read. this is fine, but for this whole idea to work, I&#39;ll have to decode the wood markings and structure them in a computer-readable format. if I&#39;m going to be implementing that anyways, might as well decode the magic bytes from the same source.</p>
 <p>this also brings a sort of redundancy to the accuracy and precision of the system, because the door frame might <em>and usually is</em> more noticeable than the wood markings, but if we read our &quot;magic bytes&quot; from the markings, we&#39;re ensuring that the readability of the rest of the data is generally fine, which in my opinion builds a more solid system overall.</p>
-<h2>coding (the theory)</h2>
-<p>on this project in particular, I felt that I needed to prove most of my hypotheses right before I had any type of AI digging its nails into it, I felt like I needed it to be provable, and also do it <a href="https://www.youtube.com/watch?v=MHTG0AhBFvc" target="_blank" rel="noopener">my way</a>, even if it wasn&#39;t the most efficient way.<br>I have to say I also wasn&#39;t eager to spend dozens of hours building a nice and consistent C++ pipeline, so I chose to start working on this on Python (which I know is <em>extremely</em> more forgiving at handling images) at least to the point where I could build it to a level that the theory was mostly in place. afterwards, I would have the possibility and freedom to port it to whatever I want to, which once the theory and working example are in place I highly doubt I will care to do.</p>
-<h2>coding (actual work)</h2>
+<h2></h2>
 <h3>thoughts and info:</h3>
 <ul>
 <li>use the physical dimensions of the door and markings to be able to build a sensible grid and decode the first magic bytes</li>
