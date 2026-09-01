@@ -2,7 +2,7 @@
 title: exctracting elemental iodine from an amazon product [WIP]
 date: 2026-09-01
 draft: false
-project: false
+project: true
 ---
 
 ## lugol
