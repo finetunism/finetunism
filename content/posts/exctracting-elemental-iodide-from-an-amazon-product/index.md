@@ -6,7 +6,7 @@ project: true
 ---
 
 ## lugol
-hi! I've been wanting to make a relatively harmless and interesting extraction in my homelab, and I've realized Lugol (a solution containing iodine and potassium iodide dissolved in water, sold in Europe) might be a good starting material.
+hi! I've been wanting to make a relatively harmless and interesting extraction in my homelab, and I've realized Lugol (a solution containing iodine and potassium iodide dissolved in water) might be a good starting material.
 my objective is to separate the elemental iodine from the other components on Lugol, and ultimately obtain relatively pure elemental iodine (I₂) crystals at the end of my experiment.
 
 ## starting material
