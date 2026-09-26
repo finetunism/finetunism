@@ -4,7 +4,7 @@
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=28&duration=2800&pause=900&color=E4E4E4&center=true&vCenter=true&width=620&lines=FINETUNISM;hardware+%C2%B7+software+%C2%B7+security;finishing+the+ideas+I+start" alt="finetunism" />
 </a>
 
-**I build things with code, a 3D printer and a soldering iron, then write about them.**
+Developer. I work on web apps, electronics and 3D-printed hardware, and post about my projects on my blog.
 
 [![blog](https://img.shields.io/badge/blog-finetunism.science-111?style=flat-square&logo=cloudflare&logoColor=F38020)](https://finetunism.science)
 [![advisory](https://img.shields.io/badge/GHSA--858h--whjf--mvg5-high%208.1-d73a49?style=flat-square&logo=github)](https://github.com/steveukx/git-js/security/advisories/GHSA-858h-whjf-mvg5)
