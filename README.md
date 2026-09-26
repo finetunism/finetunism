@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="https://finetunism.science">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=28&duration=2800&pause=900&color=E4E4E4&center=true&vCenter=true&width=620&lines=FINETUNISM;hardware+%C2%B7+software+%C2%B7+security;finishing+the+ideas+I+start" alt="finetunism" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=28&duration=2800&pause=900&color=E4E4E4&center=true&vCenter=true&width=620&lines=FINETUNISM;hardware+%C2%B7+software+%C2%B7+security" alt="finetunism" />
 </a>
 
 Developer. I work on web apps, electronics and 3D-printed hardware, and post about my projects on my blog.
