@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>building a custom mp3 player [v1] — finetunism</title>
+  <meta name="description" content="background for a while now, I ve been wanting to have my own mp3 player in which I could play music offline and also knowing I own every single byte of the…">
+  <meta property="og:site_name" content="finetunism">
+  <meta property="og:title" content="building a custom mp3 player [v1]">
+  <meta property="og:description" content="background for a while now, I ve been wanting to have my own mp3 player in which I could play music offline and also knowing I own every single byte of the…">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://finetunism.science/posts/building-my-own-mp3-player/">
+  <meta property="og:image" content="https://finetunism.science/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="stage">
+      <pre class="deco deco--lg" data-d="1" aria-hidden="true">  │
+──┼──
+  │</pre>
+      <span class="deco deco--xl" data-d="2" aria-hidden="true">■</span>
+      <span class="deco deco--w" data-d="3" aria-hidden="true">▪</span>
+      <span class="deco deco--sm" data-d="4" aria-hidden="true">▫</span>
+      <span class="deco deco--w deco--sm" data-d="5" aria-hidden="true">[ v0.1 ]</span>
+      <span class="deco deco--w" data-d="6" aria-hidden="true">+</span>
+      <span class="deco" data-d="7" aria-hidden="true">┌───</span>
+      <span class="deco deco--w deco--xl" data-d="8" aria-hidden="true">□</span>
+      <span class="deco" data-d="9" aria-hidden="true">───┐</span>
+      <span class="deco" data-d="10" aria-hidden="true">+</span>
+      <span class="deco deco--xl" data-d="11" aria-hidden="true">■</span>
+      <span class="deco deco--w" data-d="12" aria-hidden="true">▪ ▪</span>
+      <span class="deco" data-d="13" aria-hidden="true">,-~( <span class="w">o</span> )~-.</span>
+      <pre class="deco deco--sm" data-d="14" aria-hidden="true">.
+.
+.
+.
+.</pre>
+      <span class="deco deco--w" data-d="15" aria-hidden="true">└──</span>
+      <span class="deco deco--w deco--sm" data-d="16" aria-hidden="true">x:21 y:03</span>
+      <span class="deco" data-d="17" aria-hidden="true">──┘</span>
+      <span class="deco deco--w deco--sm" data-d="18" aria-hidden="true">-+-</span>
+      <span class="deco deco--sm" data-d="19" aria-hidden="true">//</span>
+      <span class="deco deco--w deco--sm" data-d="20" aria-hidden="true">▫</span>
+
+      <h1><a href="/">finetunism</a></h1>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <a href="/" data-es="Inicio">Home</a>
+    <a href="/#projects" data-es="Proyectos">Projects</a>
+    <a href="/#links" data-es="Links">Links</a>
+  </nav>
+
+  <div class="layout layout--post">
+    <main>
+      <article class="post post--full">
+        <div class="post__head">
+          <span class="post__date">==[ 2026-09-25 ]</span>
+          <span class="post__rule"></span>
+
+        </div>
+        <h1 class="post__title">building a custom mp3 player [v1]</h1>
+        <p class="post__tags"><span data-es="etiquetas:">tags:</span> </p>
+        <div class="post__body">
+<h2>background</h2>
+<p>for a while now, I&#39;ve been wanting to have my own mp3 player in which I could play music offline and also knowing I own every single byte of the audio files I&#39;m playing.<br>I think it might have to do a bit with actually listening to the music without algorithm blah blah AI mark zuckerberg and so on i just want my mp3 player okay and been wanting it for more than a year</p>
+<h2>previous attempts</h2>
+<p>I don&#39;t have this documented but I did build an mp3 player in the past, I had a really shitty 3d printer which I didn&#39;t even bother using and built the project with an arduino and a <a href="https://es.aliexpress.com/item/1005008692398110.html" target="_blank" rel="noopener">dfplayer</a>, this prototype just played mp3 files (i want .wav) and the furthest I got at the time was the pcb with play/pause and skip buttons iirc. it did work but it didn&#39;t satisfy me and honestly today&#39;s result also doesn&#39;t but its closer and I can actually walk out my apt with it without it looking too much like a bomb.</p>
+<h2>the idea</h2>
+<p>while on a trip to <a href="https://en.wikipedia.org/wiki/Lyon" target="_blank" rel="noopener">Lyon</a>, I quickly realized there were no LED signs with ads on the streets, and it was all extremely visually pleasant. they do have ads on the streets, but digital advertising as in LED signs are prohibited by law, so what they do have are <a href="https://www.jcdecaux.fr/annonceurs-agences/lancez-une-campagne-daffichage-dans-votre-ville/lyon" target="_blank" rel="noopener">paper displays</a>, called <strong>panneaux déroulants</strong>.<br>i have to say this was inspiring to the design of the mp3 player, so when I was thinking of how I wanted it to look like, my brain quickly jumped to that trip and how &quot;analogue&quot; and nice it was to look at things that are supposed to be digital and slop like in an analogue format. i decided i wanted an e-ink display for my player </p>
+<h2>component list</h2>
+<ul>
+<li>2.13 e-ink display</li>
+<li>Xiao ESP32S3 (microcontroller)</li>
+<li>a DAC (digital audio codec)</li>
+<li>battery</li>
+<li>sd card reader</li>
+<li>switch and other disposables</li>
+</ul>
+<h1>building</h1>
+<p>i want to preface this by saying its a prototype, with that said, the first thing I wanted to get done was designing the e-ink display case, which I whipped up in cad fairly fast</p>
+<figure><img src="img2-2.png" alt="img2" loading="lazy"></figure>
+<p>nicely enough it was a press fit so it was easy enough to build around it i basically knew i&#39;d be able to glue it to whatever I designed afterwards and it&#39;d look fine enough for a beta device.</p>
+<figure><img src="img3-2.png" alt="img3" loading="lazy"></figure>
+<p>that&#39;s from when I was testing the fit on the screen and how I wanted it to look like</p>
+<p>okay so i built the holder for the screen, the backplate to keep it inside the case</p>
+<figure><img src="img4.png" alt="img4" loading="lazy"></figure>
+<p>after that I diverged onto many other projects for about two weeks which incidentally helped me get considerably better at CAD, at least to a level where i&#39;d feel somewhat comfortable continuing the build, because at the time it all felt a bit daunting</p>
+<p>having gained a bit more experience, I measured the components I had and came up with this thing to hold them, usually I need to print and test fit to lay out mentally what i want the thing to look like, at this point i was able to wire up the display to my esp32</p>
+
+        </div>
+        <div class="post__foot"></div>
+        <a class="post__more" href="/" data-es="&lt;&lt; volver">&lt;&lt; back</a>
+      </article>
+    </main>
+  </div>
+
+
+  <footer class="footer">
+    &copy; 2026 finetunism
+    <span class="divider">|</span> no cookies
+    <span class="divider">|</span> <a href="#top" data-es="volver arriba">back to top</a>
+  </footer>
+
+</body>
+</html>
