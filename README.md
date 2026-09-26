@@ -58,7 +58,3 @@ A mechanical click counter with an OLED display, a Raspberry Pi 3B+ sequencer en
 </td>
 </tr>
 </table>
-
-### 🌐 Blog
-
-I write about my projects at **[finetunism.science](https://finetunism.science)**.
