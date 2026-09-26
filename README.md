@@ -70,26 +70,6 @@ A mechanical click counter with an OLED display, a Raspberry Pi 3B+ sequencer en
 </tr>
 </table>
 
-### 🌐 The blog
+### 🌐 Blog
 
-- **[finetunism.science](https://finetunism.science)**: this blog, built with a custom markdown→HTML/PDF pipeline running on Cloudflare Workers with Durable Objects. `Workers` `marked` `pdfkit`
-
----
-
-### 🧰 Toolbox
-
-<p>
-<img src="https://skillicons.dev/icons?i=ts,js,python,cpp,nodejs,nextjs,react,astro,tailwind,postgres,cloudflare,docker,arduino,raspberrypi,blender,linux,git&perline=17" alt="stack" />
-</p>
-
-**Hardware:** ESP32 · Arduino · I²S audio · e-ink · FreeCAD · Bambu 3D printing
-**Web:** TypeScript · Next.js · Hono · Drizzle · Better Auth · Astro · Cloudflare
-**Security:** argument/command injection · supply-chain libraries · responsible disclosure
-
-<div align="center">
-
----
-
-<sub>new posts at <a href="https://finetunism.science">finetunism.science</a>, where the goal is to actually finish the ideas</sub>
-
-</div>
+I write about my projects at **[finetunism.science](https://finetunism.science)**.
