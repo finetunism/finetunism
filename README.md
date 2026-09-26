@@ -7,25 +7,14 @@
 Embedded electronics · mechanical design · applied chemistry · security research
 
 [![blog](https://img.shields.io/badge/blog-finetunism.science-111?style=flat-square&logo=cloudflare&logoColor=F38020)](https://finetunism.science)
-[![advisory](https://img.shields.io/badge/GHSA--858h--whjf--mvg5-high%208.1-d73a49?style=flat-square&logo=github)](https://github.com/steveukx/git-js/security/advisories/GHSA-858h-whjf-mvg5)
 
 </div>
 
 ---
 
-### 🛡️ Security
+### 🛡️ Security advisories
 
-> [!IMPORTANT]
-> **[GHSA-858h-whjf-mvg5](https://github.com/steveukx/git-js/security/advisories/GHSA-858h-whjf-mvg5)**: command execution in [`simple-git`](https://github.com/steveukx/git-js), the Node.js git wrapper that gets millions of downloads a week.
-
-| | |
-|---|---|
-| **Severity** | 🔴 High, CVSS **8.1** |
-| **Class** | CWE-77 command injection · CWE-88 argument injection |
-| **Affected** | `simple-git <= 3.36.0` → patched in **4.0.0** |
-| **Credit** | Reporter (as [@internetteletubbie](https://github.com/internetteletubbie)) |
-
-`simple-git` has a plugin called `blockUnsafeOperationsPlugin` that blocks dangerous flags like `--receive-pack` and `--exec`. Git also accepts any unambiguous prefix of a long option, so `--receive-p` and `--exe` got past the filter while git ran them as the full flags. A crafted `push` to a local or `file://` remote could then run arbitrary commands.
+- **[steveukx/git-js](https://github.com/steveukx/git-js)** ![stars](https://img.shields.io/github/stars/steveukx/git-js?style=flat-square&label=%E2%98%85&color=555) · [GHSA-858h-whjf-mvg5](https://github.com/steveukx/git-js/security/advisories/GHSA-858h-whjf-mvg5) · high
 
 ---
 
