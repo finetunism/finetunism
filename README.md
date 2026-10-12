@@ -14,7 +14,7 @@ Embedded electronics · mechanical design · applied chemistry · security resea
 
 ### 🛡️ Security advisories
 
-- **[steveukx/git-js](https://github.com/steveukx/git-js)** ![stars](https://img.shields.io/github/stars/steveukx/git-js?style=flat-square&label=%E2%98%85&color=555) · [GHSA-858h-whjf-mvg5](https://github.com/steveukx/git-js/security/advisories/GHSA-858h-whjf-mvg5) · high · [CVE-2026-102827](https://advisories.gitlab.com/npm/simple-git/CVE-2026-102827/)
+- **[steveukx/git-js](https://github.com/steveukx/git-js)** ![stars](https://img.shields.io/github/stars/steveukx/git-js?style=flat-square&label=%E2%98%85&color=555) · [CVE-2026-102827](https://advisories.gitlab.com/npm/simple-git/CVE-2026-102827/)· high (8.1)
 
 ---
 
